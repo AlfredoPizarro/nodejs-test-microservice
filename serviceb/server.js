@@ -2,7 +2,6 @@ const express = require('express');
 const { NodeTracerProvider } = require('@opentelemetry/node');
 const { SimpleSpanProcessor, ConsoleSpanExporter } = require('@opentelemetry/tracing');
 const { JaegerExporter } = require('@opentelemetry/exporter-jaeger');
-const { TraceContextPropagator } = require('@opentelemetry/context-propagation');
 
 const app = express();
 const port = 8080;
@@ -19,11 +18,9 @@ const jaegerExporter = new JaegerExporter({
   port: 6831,
 });
 
-// Register the exporter and propagator
+// Register the exporter
 tracerProvider.addSpanProcessor(new SimpleSpanProcessor(jaegerExporter));
-tracerProvider.register({
-  propagator: new TraceContextPropagator(),
-});
+tracerProvider.register();
 
 // Define the HTTP handler for the /health endpoint
 app.get('/health', (req, res) => {
