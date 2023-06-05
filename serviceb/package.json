@@ -1,0 +1,23 @@
+{
+  "name": "serviceb",
+  "version": "1.0.0",
+  "description": "Node.js test service ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "microservice"
+  ],
+  "author": "Alfredo Pizarro",
+  "license": "MIT",
+  "dependencies": {
+    "@opentelemetry/node": "^1.0.0",
+    "@opentelemetry/tracing": "^1.0.0",
+    "@opentelemetry/exporter-jaeger": "^1.0.0",
+    "@opentelemetry/context-propagation": "^1.0.0",
+    "express": "^4.17.1"
+  }
+}
+
