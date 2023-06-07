@@ -5,7 +5,7 @@ const { SimpleSpanProcessor, ConsoleSpanExporter, BatchSpanProcessor } = require
 const { JaegerExporter } = require('@opentelemetry/exporter-jaeger');
 
 const app = express();
-const port = 8081;
+const port = 8080;
 
 // Create and configure the tracer provider
 const tracerProvider = new NodeTracerProvider();
