@@ -31,7 +31,7 @@ app.get('/Path1/request/servicec', (req, res) => {
   
   span.end();
 
-  const response = { status: 'ok' };
+  const response = { service: 'service-C' };
   res.json(response);
 });
 

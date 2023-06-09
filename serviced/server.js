@@ -31,7 +31,7 @@ app.get('/Path2/request/serviced', (req, res) => {
   
   span.end();
 
-  const response = { status: 'ok' };
+  const response = { service: 'service-D' };
   res.json(response);
 });
 
